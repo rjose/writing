@@ -1,0 +1,231 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Hammers and Nails (and Tower Defense)
+\end_layout
+
+\begin_layout Standard
+There's an observation attributed to Abraham Maslow (though I'm sure it's
+ been around for much longer) that 
+\begin_inset Quotes eld
+\end_inset
+
+...it is tempting, if the only tool you have is a hammer, to treat everything
+ as if it were a nail
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The tools that you're comfortable with shape the way you think about problems
+ and can actually prevent you from finding better, more suitable, and more
+ efficient solutions.
+\end_layout
+
+\begin_layout Standard
+One of the benefits of a 
+\series bold
+tower defense architecture
+\series default
+ is that your software layers (towers) can be specialized to address different
+ kinds of problems (monsters).
+ When you can focus your software layers on solving specific problems instead
+ of solving multiple problems simultaneously, you simplify the code and
+ architecture, and you enable others to reason better about your system.
+ One particularly nice example of this is when you develop a distributed
+ system.
+ Here, since each 
+\begin_inset Quotes eld
+\end_inset
+
+software tower
+\begin_inset Quotes erd
+\end_inset
+
+ is a separate process, you're free to choose whatever technology makes
+ the most sense to solve each particular problem.
+\end_layout
+
+\begin_layout Standard
+I've been experimenting with these ideas in some of the projects I'm working
+ on.
+ One of these is an application for doing annual and quarterly project/team
+ planning at LinkedIn.
+ Here's the high-level flow:
+\end_layout
+
+\begin_layout Itemize
+Managers enter project estimates and staff info into Google Docs spreadsheets.
+\end_layout
+
+\begin_layout Itemize
+A process pulls raw data from spreadsheets and sends it to a snapshot server
+ to be stored.
+\end_layout
+
+\begin_layout Itemize
+Another process conditions the raw data every time a snapshot is taken.
+\end_layout
+
+\begin_layout Itemize
+Another process takes the conditioned data as input, does resource planning
+ computation on it, and then snapshots the result.
+\end_layout
+
+\begin_layout Itemize
+A web server takes the planning computation results, converts to JSON, and
+ caches it.
+\end_layout
+
+\begin_layout Itemize
+A web app makes requests of the server and renders the quarterly/annual
+ planning information for our various orgs and teams.
+\end_layout
+
+\begin_layout Standard
+Each of these 
+\begin_inset Quotes eld
+\end_inset
+
+software towers
+\begin_inset Quotes erd
+\end_inset
+
+ has a specific problem to solve and is written using the best technology
+ (at least the best in my toolbox :-)).
+\end_layout
+
+\begin_layout Itemize
+The process that pulls data is written in node.js.
+ It's perfect for making concurrent requests when there's blocking IO.
+\end_layout
+
+\begin_layout Itemize
+The process that conditions the raw data is written in Python.
+ It's great at working flexibly with (mostly) structured text.
+\end_layout
+
+\begin_layout Itemize
+The process that does computation on the conditioned data is written in
+ Haskell.
+ Since Haskell is a pure functional language, it's the perfect choice for
+ writing filters like this.
+ And because the data has been conditioned by another 
+\begin_inset Quotes eld
+\end_inset
+
+software tower
+\begin_inset Quotes erd
+\end_inset
+
+, I can make a lot of assumptions about it, thereby simplifying the Haskell
+ code.
+\end_layout
+
+\begin_layout Itemize
+The web server is written in C with an embedded lua interpreter (yeah, it's
+ a little NIH, but I'll explain in a future post).
+ C is excellent for doing network programming, and lua is very light and
+ fast.
+ Since this is taking input from the 
+\begin_inset Quotes eld
+\end_inset
+
+haskell tower
+\begin_inset Quotes erd
+\end_inset
+
+ (whose output is very regular and clean), I can make very strong assumptions
+ about the data.
+\end_layout
+
+\begin_layout Standard
+Each software tower has a specific job and is designed to do that job reliably
+ and well.
+ Moreover, because the output of each software tower is more predictable
+ than its inputs, the entire system becomes simpler and more
+\series bold
+ reasonable
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+If all I had were Java, everything would look like classes and objects.
+ If all I had were Python, everything would look like dictionaries.
+ If all I had were node.js, then everything would look evented.
+ Every technology was invented to address a particular kind of problem.
+ When used appropriately, every language/library/tool/tech shines; when
+ not, it gets in your way and makes everything more complicated, more difficult,
+ and maybe even impossible.
+ Build the right towers using the best tools for the situation, and place
+ them well.
+\end_layout
+
+\begin_layout Standard
+Keep learning, keep looking at problems in different ways, keep challenging
+ the way you look at the world.
+ And remember you can't use silver bullets on everything: just werewolves
+ (and I guess people, too) :-)
+\end_layout
+
+\end_body
+\end_document
