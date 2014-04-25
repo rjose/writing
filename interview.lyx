@@ -1,0 +1,448 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+What to do (and not do) if I interview you
+\end_layout
+
+\begin_layout Standard
+I've conducted a lot of software interviews over the years, and I've noticed
+ a number of problems show up over and over again.
+ I'd like to share some of my observations with you and give you some advice
+ when you go out for your next interview (in particular, if you're lucky
+ enough to interview with me :-)).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Prepare to answer technical questions
+\series default
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+I know that you may be rusty.
+ I know that it's been a year or 2 (or 5 or 10 or 20) since you studied
+ algorithms.
+ I know this isn't what you do in your day job (or what you'll do here).
+ Technical and algorithmic questions show that you understand the fundamentals
+ of this career.
+ You need to be able to analyze problems.
+ You need to be able to solve problems efficiently.
+\end_layout
+
+\begin_layout Enumerate
+The recruiters will point you to resources to help you prepare.
+ Spend a weekend working on your fundamentals.
+ Get into fighting shape.
+ Get the lingo and vocabulary down.
+ Make sure you understand core concepts (e.g., basic algorithms, data structures,
+ and estimating computational complexity).
+\end_layout
+
+\begin_layout Enumerate
+Also, it's OK to say that you don't know how to approach a question.
+ If it's entirely out of your domain, you can ask for a different question
+ (though you should only do this once).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Relax
+\series default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+One way to relax is to smile.
+ Try smiling before the interview starts.
+ Just turn around, look through the window (or at the wall), and give a
+ nice big smile.
+ It will help relax you and put you in a good frame of mind for the rest
+ of the day.
+\end_layout
+
+\begin_layout Enumerate
+Treat this as a conversation not an interrogation.
+ An interview should be like a technical discussion you have at lunch with
+ your colleagues/classmates.
+ Topics are raised; people talk about them; people ask for elaboration;
+ people explain what they mean.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Don't lie (don't even exaggerate).
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+I'm going to do a 
+\begin_inset Quotes eld
+\end_inset
+
+5 Whys
+\begin_inset Quotes erd
+\end_inset
+
+ on you.
+ This is a technique for getting to the root of something.
+ The idea is that you ask 
+\begin_inset Quotes eld
+\end_inset
+
+why
+\begin_inset Quotes erd
+\end_inset
+
+ about something, and then as a follow up to the response, you ask 
+\begin_inset Quotes eld
+\end_inset
+
+why
+\begin_inset Quotes erd
+\end_inset
+
+ about a certain aspect of it, and then repeat this a few more times.
+\end_layout
+
+\begin_layout Enumerate
+The reason I do this is that it strips the veneer off of interview answers.
+ You may be able to can a response for a set of known questions, but you
+ cannot possibly can responses 5 levels deep -- the fanout of possible questions
+ is too great.
+ You have no choice but to answer truthfully (or clam up).
+\end_layout
+
+\begin_layout Enumerate
+If you lie (or exaggerate), I will quickly figure this out.
+ For example, if you say that you have a passion for learning, my response
+ will be 
+\begin_inset Quotes eld
+\end_inset
+
+Oh, that's great! Tell me something you've learned about this past month
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If you come up empty, then maybe you don't really have a passion for learning.
+ If instead you say 
+\begin_inset Quotes eld
+\end_inset
+
+I learned Haskell last week
+\begin_inset Quotes erd
+\end_inset
+
+, then I'll say 
+\begin_inset Quotes eld
+\end_inset
+
+Oh, that's cool! What do you like about it compared to the languages you
+ normally use?
+\begin_inset Quotes erd
+\end_inset
+
+ and then maybe 
+\begin_inset Quotes eld
+\end_inset
+
+Can you apply any of that to what you're doing now
+\begin_inset Quotes erd
+\end_inset
+
+, and then maybe 
+\begin_inset Quotes eld
+\end_inset
+
+How would that improve the quality of your code?
+\begin_inset Quotes erd
+\end_inset
+
+, ...
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Don't be evasive.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+I won't ask you mean questions.
+ I'm just trying to figure out if you know what you say you know and if
+ you'd be a good person to work with.
+ Some interview advice recommends that you avoid answering a tough question
+ directly.
+ With me, that's bad advice.
+ It sends a signal that you may be untrustworthy or have something to hide.
+ I take a very dim view of people who evade questions.
+ 
+\end_layout
+
+\begin_layout Enumerate
+BTW: There's one particular mean question that I won't ask you: 
+\begin_inset Quotes eld
+\end_inset
+
+What would your manager say you needed to improve most
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This is mean because most of us tend to be more critical of ourselves than
+ we deserve.
+ This question pokes at that in a very direct way.
+ If someone 
+\emph on
+does
+\emph default
+ ask you this, here's one way to respond: first, give a knowing smile --
+ show that you understand that they just hit you below the belt.
+ Then say something along the lines of how you have a great relationship
+ with your manager and that you tend to be a lot more open with them than
+ you're comfortable sharing with others, but that you'd be happy to answer
+ the question if they could give an example from their own experience.
+ In other words, make them answer the question first, and then follow suit
+ along the same lines (remember to tell the truth, though!)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Leverage who you are.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If you're just out of school, leverage your enthusiasm and excitement.
+ If you've been working for a few years, proudly talk about your accomplishments.
+ If you're mid-career, talk about the important mistakes that made you who
+ you are -- reminisce about technologies long gone, especially, what you
+ liked and didn't like about them.
+ Present yourself from a position of strength.
+ Hold that position and attitude throughout the interview.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Have an opinion on something.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+You should care enough about something (ideally software related) that you
+ have an opinion about it.
+ Even better if I disagree with your opinion! This shows that you can be
+ critical of technology/process/tools, that you understand tradeoffs, that
+ you have the conviction to stand up for something, and that you are able
+ to make conscious choices.
+ Of course, you need to have some depth here and be able to back up what
+ you say (remember the 
+\begin_inset Quotes eld
+\end_inset
+
+5 Whys
+\begin_inset Quotes erd
+\end_inset
+
+).
+ And don't be too vocal, or you'll come off as inflexible.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Frame yourself.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Before you come in (ideally, before you even apply), you should frame your
+ career.
+ You should be able to tell a story that describes your career arc.
+ What's driving you? What are you looking for? How does what you're applying
+ for fit into that? Look back at your life and connect the dots.
+ By painting a picture of yourself in this way, you will be more memorable.
+ You will stand out.
+ This is how I'll present you in hiring committees.
+ Don't make me figure this out, and don't leave this to chance.
+ Do a little self reflection (which is always good to do every once in a
+ while).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Ask me questions.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+At the end of the interview, you should have some questions for me.
+ Remember, we're having a conversation -- this is where you carry your part
+ of it.
+ Ask me about the culture here.
+ Ask me if I like it.
+ Ask me what I don't like.
+ Ask me what the mission is? Ask me about my role in the mission.
+ This is your turn at doing a 
+\begin_inset Quotes eld
+\end_inset
+
+5 whys
+\begin_inset Quotes erd
+\end_inset
+
+.
+ You should be figuring out if you want to work with 
+\emph on
+me
+\emph default
+ (or someone like me here).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Be crisp.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Eat a healthy meal.
+ Get some exercise.
+ Get a good night's sleep.
+ Wake up a little early.
+ Arrive a little early.
+ You want to be crisp for the interview.
+ You want your answers to be crisp.
+ You want your code to be crisp.
+ The best possible impression you can leave me with is that you were 
+\begin_inset Quotes eld
+\end_inset
+
+crisp
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Being crisp makes everything you do come off much, much better.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Be yourself.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Although I'm trying to evaluate your technical skills, I'm also trying to
+ make a connection with you.
+ If you adopt too much of a 
+\begin_inset Quotes eld
+\end_inset
+
+salesman
+\begin_inset Quotes erd
+\end_inset
+
+ persona, then you'll strike me as a little off (unless you happen to be
+ a salesman, in which case, this is fine :-)).
+ If you make it through the 
+\begin_inset Quotes eld
+\end_inset
+
+5 whys
+\begin_inset Quotes erd
+\end_inset
+
+ and leverage who you are, this should be natural.
+ At the end of the day we're just two people talking about software.
+ If you know what you're talking about, and 
+\emph on
+I
+\emph default
+ know what I'm talking about, then we'll both have a great interview.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
