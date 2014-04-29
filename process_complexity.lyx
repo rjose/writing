@@ -1,0 +1,284 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Manage process complexity
+\end_layout
+
+\begin_layout Standard
+Freshly minted software engineers are good at estimating 
+\emph on
+computational complexity
+\emph default
+ (e.g., how does the execution time increase when applied to increasingly
+ larger problems).
+ This helps them ensure their software runs efficiently.
+ But freshly minted SW managers often leave this tool behind when they could
+ also be using it to analyze 
+\emph on
+process complexity
+\emph default
+ and run their 
+\emph on
+teams
+\emph default
+ efficiently.
+\end_layout
+
+\begin_layout Subsection
+Examples of process complexity
+\end_layout
+
+\begin_layout Standard
+(Computational complexity gets pretty formal pretty fast, so I'm going to
+ describe things very informally and leave the technical details to you
+ :-)).
+ Here are examples of different kinds of process complexity:
+\end_layout
+
+\begin_layout Itemize
+A process with 
+\begin_inset Quotes eld
+\end_inset
+
+linear time
+\begin_inset Quotes erd
+\end_inset
+
+ complexity grows proportionally with the size of the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Scanning email subject lines in your inbox is a linear time task -- scanning
+ 50 items takes twice as long as scanning 25.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A process with 
+\begin_inset Quotes eld
+\end_inset
+
+quadratic time
+\begin_inset Quotes erd
+\end_inset
+
+ complexity grows with the 
+\emph on
+square
+\emph default
+ of the size of the problem.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For instance, going through a review process where any step of the flow
+ could force you to start over is quadratic time -- a process with triple
+ the number of steps of another will take 9 times as long.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+A process with 
+\begin_inset Quotes eld
+\end_inset
+
+exponential time
+\begin_inset Quotes erd
+\end_inset
+
+ complexity grows with 
+\emph on
+2 raised to the size
+\emph default
+ of the problem.
+ This grows pretty big pretty fast.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+For example, deciding on a project portfolio and manually scheduling it
+ according to some criteria requires exponential time.
+ You can see this if you consider that at any time period, a project is
+ either scheduled or it isn't -- there are two possibilities for each project
+ in each time period.
+ If you have 10 projects, then you have 2*2*2*2*2*2*2*2*2*2 possibilities
+ (i.e., 2^10).
+ If you have to evaluate each case,...
+ well, you get the idea :-).
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+The tragedy of the successful manager
+\end_layout
+
+\begin_layout Standard
+A pattern I've seen a lot (and fell into myself when I became a first-time
+ manager years ago) was that when you first become a manager, your team
+ is small enough that you can 
+\begin_inset Quotes eld
+\end_inset
+
+brute force
+\begin_inset Quotes erd
+\end_inset
+
+ your processes and make them work.
+ If you have 4 people, the difference between linear time, quadratic time,
+ and exponential time is manageable.
+ You can make your processes work through pure willpower.
+\end_layout
+
+\begin_layout Standard
+However, as you demonstrate success, you are given more responsibility and
+ more people to manage.
+ Soon you realize that what got you here isn't good enough to keep you here.
+ The processes you relied on aren't working so well any more.
+ You don't have the time or the energy to keep up with the 
+\begin_inset Quotes eld
+\end_inset
+
+process complexity
+\begin_inset Quotes erd
+\end_inset
+
+.
+ What used to take days now takes weeks.
+ What you thought should take 5 people now takes 20.
+ To cope, you hire more people (and more managers), and unwittingly, you've
+ worsened your situation just like Fred Brooks said would happen.
+ Now, the number of communication paths has exploded and the coordination
+ effort has become very high.
+ At this point, the usual advice is to 
+\begin_inset Quotes eld
+\end_inset
+
+delegate
+\begin_inset Quotes erd
+\end_inset
+
+, but this doesn't really solve the underlying problem; it just moves it
+ to someone else.
+\end_layout
+
+\begin_layout Subsection
+Need to recognize quadratic time processes and address them
+\end_layout
+
+\begin_layout Standard
+So what's the way out? The first step is to take a critical look at how
+ things are running.
+ Ask people what's not working.
+ Ask them what's causing things to be slow or painful and then take a wide-angle
+ view of the situation and see how that could be making a process quadratic
+ (or worse).
+ Figure out what you can do to get back to linear time (or better).
+ Use your engineer brain again :-)
+\end_layout
+
+\begin_layout Standard
+For instance, if you ask people what's painful, and they cite rework as
+ a major problem, think about what part of this is causing the process to
+ take quadratic time.
+ Does the rework force you to start from the beginning? Does it invalidate
+ work that's already done? Are we putting off a design decision that will
+ cause ripples later just so we can say a task is complete? In general,
+ anything that causes rippling rework is a sign of a quadratic time process
+ and should be viewed critically.
+ Not only does this vastly increase the time to get projects done, it is
+ discouraging to people and wears them down.
+ It can lead to a vicious cycle of process complexity.
+\end_layout
+
+\begin_layout Subsection
+Nothing replaces thinking
+\end_layout
+
+\begin_layout Standard
+At the end of the day, you have to be critical of your processes.
+ Processes are algorithms.
+ Algorithms have computational complexity.
+ You have to analyze them the same way you analyze algorithms when you write
+ code.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Profile
+\begin_inset Quotes erd
+\end_inset
+
+ your processes by talking to people.
+ Personally scrutinize how things work and 
+\emph on
+think
+\emph default
+ about what's happening.
+ Nothing replaces thinking.
+ Any methodology can become quadratic time (or worse) if blindly adopted.
+ What got you here won't keep you here (let alone get you to the next step)
+ -- to do that you'll need to think.
+\end_layout
+
+\end_body
+\end_document
