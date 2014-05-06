@@ -1,0 +1,429 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Pattern patter
+\end_layout
+
+\begin_layout Standard
+As I was skimming an article on pattern matching the other day, I realized
+ that I had pattern matching, deconstruction, and guards all jumbled together
+ in my mind.
+ The goal of this post is to straighten all of that out.
+\end_layout
+
+\begin_layout Subsection*
+What is pattern matching?
+\end_layout
+
+\begin_layout Standard
+Pattern matching in programming is analogous to string matching with regular
+ expressions.
+ When using regular expressions, you specify a pattern of characters you'd
+ like to match and then if any substrings in a given input string match
+ this pattern, this evaluates to 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Similarly in programming languages like Haskell or Erlang, you specify
+ a set of patterns that you'd like inputs to match, and if an input matches
+ one of these patterns, this evaluates to some associated result for it.
+ Here's a Haskell example from 
+\bar under
+Learn You a Haskell for a Great Good
+\bar default
+:
+\end_layout
+
+\begin_layout Quotation
+sayMe 1 = "One!"
+\end_layout
+
+\begin_layout Quotation
+sayMe 2 = "Two!"
+\end_layout
+
+\begin_layout Quotation
+sayMe 3 = "Three!"
+\end_layout
+
+\begin_layout Quotation
+sayMe 4 = "Four!"
+\end_layout
+
+\begin_layout Quotation
+sayMe 5 = "Five!"
+\end_layout
+
+\begin_layout Quotation
+sayMe x = "Not between 1 and 5"
+\end_layout
+
+\begin_layout Standard
+Note that each line above is essentially a separate function defined for
+ each pattern of input.
+ The collection of these 
+\begin_inset Quotes eld
+\end_inset
+
+sub-functions
+\begin_inset Quotes erd
+\end_inset
+
+ defines the overall function.
+ If you think back to high school math, this is the same way you define
+ discontinuous functions.
+\end_layout
+
+\begin_layout Subsection*
+What is deconstruction?
+\end_layout
+
+\begin_layout Standard
+Deconstruction (or 
+\begin_inset Quotes eld
+\end_inset
+
+destructuring
+\begin_inset Quotes erd
+\end_inset
+
+) in programming has an analog in string matching as well.
+ For instance, if you specify a regular expression like /ABC(
+\backslash
+d+)XYZ/ (which means we're looking for a string starting with 
+\begin_inset Quotes eld
+\end_inset
+
+ABC
+\begin_inset Quotes erd
+\end_inset
+
+, ending with 
+\begin_inset Quotes eld
+\end_inset
+
+XYZ
+\begin_inset Quotes erd
+\end_inset
+
+, and with one or more digits in between) and apply it to a string like
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ABC246XYZ
+\begin_inset Quotes erd
+\end_inset
+
+, not only will the string match, but you'll also be able to get the digits
+ 
+\begin_inset Quotes eld
+\end_inset
+
+246
+\begin_inset Quotes erd
+\end_inset
+
+ out of the match.
+ In general, anything in the parentheses of a regular expression can be
+ retrieved from the match.
+ Deconstruction is similar in that it also extracts data from inputs.
+ Here's an example from Python:
+\end_layout
+
+\begin_layout Quotation
+a_list = [2, 4, 6]
+\end_layout
+
+\begin_layout Quotation
+[x, y, z] = a_list
+\end_layout
+
+\begin_layout Quotation
+x == 2 # True
+\end_layout
+
+\begin_layout Quotation
+y == 4 # True
+\end_layout
+
+\begin_layout Quotation
+z == 6 # True
+\end_layout
+
+\begin_layout Standard
+In this case, we 
+\begin_inset Quotes eld
+\end_inset
+
+deconstruct
+\begin_inset Quotes erd
+\end_inset
+
+ the list via assignment to a specific list 
+\begin_inset Quotes eld
+\end_inset
+
+pattern
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In Clojure, destructuring is more flexible and is often used to pick apart
+ function arguments.
+ In Haskell, destructuring is more flexible still and is often combined
+ with pattern matching (which is why it's easy to conflate the two).
+ For instance, here's an example where pattern matching and destructuring
+ is used to compute the perimeter of different shapes:
+\end_layout
+
+\begin_layout Quotation
+perimeter (Rectangle width height) = 2.0 * (width + height)
+\end_layout
+
+\begin_layout Quotation
+perimeter (Square height) = 4.0 * height
+\end_layout
+
+\begin_layout Quotation
+perimeter (Circle radius) = 2 * PI * radius
+\end_layout
+
+\begin_layout Quotation
+>> perimeter (Rectangle 4 5)
+\end_layout
+
+\begin_layout Quotation
+>> 18
+\end_layout
+
+\begin_layout Standard
+In this example, different shapes match different constructor patterns,
+ and the data used to compute each result is extracted from the arguments
+ that were used to construct each shape (hence the term 
+\emph on
+deconstruction
+\emph default
+).
+ Note that while both pattern matching and deconstruction are being used
+ together here, they are different constructs and are used for different
+ purposes.
+ Pattern matching is a kind of 
+\emph on
+conditional dispatch.
+
+\emph default
+ Deconstruction/destructuring is a kind of 
+\emph on
+selective assignment
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection*
+So what are guards?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Guards
+\begin_inset Quotes erd
+\end_inset
+
+ are just plain old conditions.
+ Anytime you've written an 
+\begin_inset Quotes eld
+\end_inset
+
+if...elseif...else
+\begin_inset Quotes erd
+\end_inset
+
+ block or a switch statement, you've used guards.
+ Guards are pretty generic.
+ In fact, you can view pattern matching as a kind of guard (or as guards
+ + deconstruction).
+\end_layout
+
+\begin_layout Standard
+While guards seem to be the most pedestrian of the topics we went over today,
+ they can become quite a powerful tool when combined with a little forethought.
+ More on that next time.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Partitions
+\end_layout
+
+\begin_layout Standard
+Here, we're defining a function that computes the perimeter of a shape.
+ Different shapes match 
+\end_layout
+
+\begin_layout Standard
+What is pattern matching? Related to deconstruction in many functional languages
+ Haskell, ML, Clojure.
+ Rich Hickey's line comment on this post () sums it up neatly: Pattern matching
+ is a conditional construct and destructuring isn’t.
+ I don't think clojure has pattern matching (but my clojure's gotten a bit
+ rusty -- maybe someone who knows can verify and comment?)
+\end_layout
+
+\begin_layout Standard
+Guarded pattern matching
+\end_layout
+
+\begin_layout Standard
+You can do pattern matching poorly.
+ As with any tool.
+ The key is to think about your domain.
+\end_layout
+
+\begin_layout Standard
+awk is designed around pattern matching applied to lines of text.
+\end_layout
+
+\begin_layout Standard
+Mutually exclusive.
+ Use to divide the complexity of the overall problem.
+\end_layout
+
+\begin_layout Standard
+Pattern matching without guards is a bit like having an implicit guard.
+\end_layout
+
+\begin_layout Standard
+Pattern matching can be used to match something structural and/or specific
+ values.
+\end_layout
+
+\begin_layout Standard
+Similar to grep, parts of the pattern that are matched can be extracted.
+ This is called 
+\begin_inset Quotes eld
+\end_inset
+
+deconstruction
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+pattern
+\begin_inset Quotes erd
+\end_inset
+
+ pattern is basically a guard pattern + destructuring.
+\end_layout
+
+\begin_layout Standard
+Related to formal specification.
+ This is another way to check that you've covered everything.
+\end_layout
+
+\begin_layout Standard
+This is a fine way to slash the complexity of a function.
+ Argue about each subset of the problem.
+ Make strong assumptions about each subproblem and solve more simply.
+ If you can partition the set (in the mathematical sense), you can make
+ strong assumptions about each cell.
+\end_layout
+
+\begin_layout Standard
+Partitioning a set well.
+ If you do this well, each set in the partition is well-defined and easy
+ to work with.
+ This seems related to the concept of eigenvectors from linear algebra in
+ the sense that when eigenvectors (the characteristic vectors) are used
+ as the basis for a set of vectors, certain operations become much simpler
+ (e.g., all of the 
+\begin_inset Quotes eld
+\end_inset
+
+cross terms
+\begin_inset Quotes erd
+\end_inset
+
+ vanish).
+ If that didn't make sense, don't worry.
+ If that did make sense, there's probably a CS dissertation in there somewhere
+ -- one with practical application and some math.
+ BTW: that last thought was a partition of the set of people who read this
+ :-)
+\end_layout
+
+\end_body
+\end_document
