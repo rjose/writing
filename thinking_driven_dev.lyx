@@ -1,0 +1,250 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Thinking-driven development
+\end_layout
+
+\begin_layout Standard
+Recently, there have been some animated debates on the web regarding the
+ merits of test-driven development.
+ At work, we've had several lunch discussions about this as well.
+ While there isn't clear consensus, there are a couple of things everyone
+ agrees on: you can do TDD badly and you should think before you code.
+\end_layout
+
+\begin_layout Subsection*
+Bad test-driven development
+\end_layout
+
+\begin_layout Standard
+One easy way to do TDD badly is to treat it like a 
+\begin_inset Quotes eld
+\end_inset
+
+greedy search
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Here, you don't have a clear idea of what you need to implement, so you
+ start with a test and write some code until the test passes.
+ Then you add another test and patch your code some more until it works.
+ If your original design didn't work, you backtrack and try again.
+ Every test you add causes you to patch the code or backtrack.
+ During each of these cycles, you dutifully refactor at each step, but if
+ your design doesn't work out in the next step, you'll have to throw this
+ refactoring work away, too.
+ When you code this way, every case you handle is like a special case, every
+ change you make is a patch, and every patch you make may have unintended
+ consequences if you aren't sure how it impacts the rest of the system.
+\end_layout
+
+\begin_layout Standard
+I've seen this exact thing happen during interviews.
+ People launch into the problem without thinking about it first -- they
+ try to use their tests as a substitute for thinking.
+ What they often end up with is a pile of brittle, patched-up code that
+ nominally works according to their tests but which is easily broken by
+ new requirements.
+\end_layout
+
+\begin_layout Standard
+This kind of TDD is bad for two reasons.
+ One is that it's essentially an exponential time search for a solution
+ -- every new requirement may force you to revisit every combination of
+ past design choices.
+ The other reason is that you can't guarantee anything about the resulting
+ code except that it passes the particular set of tests that you've pieced
+ together while writing it.
+ Code written this way can be so specific and brittle that it defies any
+ reasoning about it.
+\end_layout
+
+\begin_layout Subsection*
+Think before you code
+\end_layout
+
+\begin_layout Standard
+So what's the alternative? How about 
+\emph on
+thinking
+\emph default
+ before you code.
+ 
+\emph on
+Think
+\emph default
+ about your problem first and how you might approach it.
+ Thinking like this involves no code, in fact it 
+\emph on
+must not
+\emph default
+ involve any code.
+ If you're coding to 
+\begin_inset Quotes eld
+\end_inset
+
+help you think
+\begin_inset Quotes erd
+\end_inset
+
+, you're doing it wrong.
+ You need to think about this at a higher, more open level.
+ You need to be able to describe the problem and different aspects of it.
+ You need to be able to describe an approach that makes sense.
+ If you can't do this, no amount of coding will save you.
+\end_layout
+
+\begin_layout Standard
+Thinking about a problem takes you out of 
+\begin_inset Quotes eld
+\end_inset
+
+exponential time
+\begin_inset Quotes erd
+\end_inset
+
+.
+ When you think, you can quickly entertain a variety approaches and discard
+ them if they don't make sense (and as a side-benefit articulate reasons
+ that justify these choices).
+ You prune away large branches of possibility at the point of consideration.
+ By understanding the problem well and constraining the solution space,
+ you draw the outlines of an implementation that you can reason about.
+\end_layout
+
+\begin_layout Subsection*
+Thinking by writing
+\end_layout
+
+\begin_layout Standard
+Leslie Lamport (the 2013 Turing Award recipient) gave a delightful talk
+ a few weeks ago called 
+\begin_inset Quotes eld
+\end_inset
+
+Thinking for Programmers
+\begin_inset Quotes erd
+\end_inset
+
+.
+ One insight from this was:
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Quotes eld
+\end_inset
+
+Writing is nature's way of letting you know how sloppy your thinking is.
+ To think, you have to write.
+ If you think without writing, you only 
+\emph on
+think
+\emph default
+ you're thinking.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We often give short shrift to writing not because we feel that it's a low
+ value activity but because the act of writing is 
+\emph on
+hard work
+\emph default
+.
+ Writing takes effort and focus but it leads to understanding.
+ The proof of our understanding is in the clarity of our prose.
+ Stating problems clearly comes from an understanding of their essential
+ features; proposing solutions clearly comes from sound design choices.
+\end_layout
+
+\begin_layout Standard
+When you think by writing, you work out and dispatch major issues at the
+ start.
+ When you think about your problem at this level, you handle entire classes
+ of errors up front 
+\emph on
+by design
+\emph default
+.
+ When you write these 
+\begin_inset Quotes eld
+\end_inset
+
+informal specifications
+\begin_inset Quotes erd
+\end_inset
+
+, you set yourself up to write straightforward code.
+ 
+\emph on
+You separate the task of solving the problem from the task of implementing
+ it
+\emph default
+, giving yourself a better shot at doing both.
+\end_layout
+
+\end_body
+\end_document
