@@ -1,0 +1,316 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Milestones of a Manager
+\end_layout
+
+\begin_layout Standard
+To 
+\begin_inset Quotes eld
+\end_inset
+
+standardize
+\begin_inset Quotes erd
+\end_inset
+
+ the expectations of management levels in an org (e.g., Manager, Director,
+ VP, etc.), you'll often see documents with odd metaphors for what managers
+ should be able to do:
+\end_layout
+
+\begin_layout Itemize
+A “Manager 1
+\begin_inset Quotes erd
+\end_inset
+
+ can lead a team into the woods and can set up a tent.
+\end_layout
+
+\begin_layout Itemize
+A “Manager 2
+\begin_inset Quotes erd
+\end_inset
+
+ can lead a team into the woods when it’s raining and can start a fire.
+\end_layout
+
+\begin_layout Itemize
+A “Manager 3
+\begin_inset Quotes erd
+\end_inset
+
+ can lead a team into the woods when it’s snowing and organize a group to
+ build shelter out of leaves and twigs.
+\end_layout
+
+\begin_layout Itemize
+A “Manager 4
+\begin_inset Quotes erd
+\end_inset
+
+ can lead a team into the woods when it’s snowing and surrounded by ravenous
+ wolves and should be able to organize groups that can build simple weapons
+ and forage for berries without supervision.
+\end_layout
+
+\begin_layout Standard
+Another way of thinking about how your people grow and develop as effective
+ leaders is to consider the impact they make and 
+\emph on
+could
+\emph default
+ make on your organization.
+\end_layout
+
+\begin_layout Subsection*
+Individual Contributor
+\end_layout
+
+\begin_layout Standard
+If you don’t start your career as a manager, you begin at Milestone 0: individua
+l contributor.
+ This is where you hone your technical abilities.
+ This is where you learn the ins and outs of your job.
+ This is where you experience first hand how one part of the organization
+ works.
+\end_layout
+
+\begin_layout Standard
+As your skills develop, you get better at your job.
+ You think of ways to do your job more easily and more effectively.
+ You build a reputation as someone with leadership potential.
+ At some point when people are deciding who should lead an upcoming initiative,
+ your name comes up.
+\end_layout
+
+\begin_layout Subsection*
+Team Lead
+\end_layout
+
+\begin_layout Standard
+The next milestone is a 
+\begin_inset Quotes eld
+\end_inset
+
+team lead
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The best way of reaching this milestone is to take on the role after you've
+ already established strong mutual respect and trust with team members.
+ Here, the team recognizes your technical ability, your knack for keeping
+ things running smoothly, and your potential to lead.
+ The team implicitly trusts you and is already treating you as the 
+\emph on
+de facto
+\emph default
+ leader.
+\end_layout
+
+\begin_layout Standard
+A harder, but more common way to become a team lead, is when your manager
+ simply picks you for the role.
+ Depending on the internal politics of the group, this may result in resentment
+ and loss of morale.
+ If this is the case, you’ll need to work hard at building trust within
+ the team.
+ This is work on top of your normal responsibilities, so it's important
+ to understand this before you accept the role.
+\end_layout
+
+\begin_layout Subsection*
+Team As Extension of Self
+\end_layout
+
+\begin_layout Standard
+The third milestone is when you start viewing the team as an extension of
+ yourself.
+ This is a tricky time for a manager.
+ As an individual contributor, you worked hard to excel and distance yourself
+ from your peers.
+ As a manager, it's natural to want to do the same with your team.
+ Your focus will be on getting your team to perform better and execute faster,
+ not because it's good for the org 
+\emph on
+per se
+\emph default
+, but in order to leave other teams behind.
+ 
+\end_layout
+
+\begin_layout Standard
+Many managers never get past this milestone.
+ They jockey for position within the organization.
+ They play politics to gain power.
+ Their primary goal is to advance themselves, even at the organization's
+ expense.
+ These managers have lost their way.
+ When you become a manager, you need to put the team before you and the
+ organization before your team.
+ If you consistently put yourself first, you will significantly limit the
+ impact you can make.
+\end_layout
+
+\begin_layout Subsection*
+Engaged Detachment
+\end_layout
+
+\begin_layout Standard
+The last milestone of a manager is something I call “engaged detachment”.
+ Here, managers are 
+\emph on
+engaged
+\emph default
+ in the organization’s overall mission and goals, but are able to 
+\emph on
+detach
+\emph default
+ themselves emotionally from their situation so they can clearly see what
+ needs to be done next to move their organizations forward.
+ Sometimes this means doing things that are not in their best interests
+ but which benefit the organization most (and ultimately themselves, too).
+ Managers in this state see how the organization could and 
+\emph on
+should
+\emph default
+ work — outside of themselves — and have the courage to lead people there.
+\end_layout
+
+\begin_layout Standard
+This is similar to something that Seth Godin describes in his book “Linchpin
+\begin_inset Quotes erd
+\end_inset
+
+.
+ He groups people as 
+\begin_inset Quotes eld
+\end_inset
+
+passive
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+passionate
+\begin_inset Quotes erd
+\end_inset
+
+ on one axis and by 
+\begin_inset Quotes eld
+\end_inset
+
+attachment
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+discernment
+\begin_inset Quotes erd
+\end_inset
+
+ on the other.
+ The people in the 
+\begin_inset Quotes eld
+\end_inset
+
+passionate discernment
+\begin_inset Quotes erd
+\end_inset
+
+ quadrant are special.
+ They are passionate about what they do but also have “discernment”, the
+ ability to see things without context, without personal attachment.
+ It's rare to find managers in this quadrant.
+ It requires a deep connection and commitment to an organization's mission
+ and a knack to see without judging.
+\end_layout
+
+\begin_layout Standard
+These people are your playmakers, your change agents, and the most impactful
+ leaders in your org.
+ Find them.
+ Learn from them.
+ Be like them.
+\end_layout
+
+\begin_layout Standard
+NOTE: The original version was posted in my 
+\begin_inset Quotes eld
+\end_inset
+
+Management Revolution
+\begin_inset Quotes erd
+\end_inset
+
+ blog.
+ I've revised it and reposted it here.
+\end_layout
+
+\end_body
+\end_document
